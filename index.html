@@ -46,6 +46,24 @@
         <!-- Information on the Right -->
         <div class="col-lg-6">
             <div class="container p-4 rounded bg-light">
+                <div id="typing-container"></div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        var text = "Hello, this is a typing effect.";
+                        var container = document.getElementById('typing-container');
+            
+                        function typeText(index) {
+                            if(index < text.length) {
+                                container.innerHTML += text.charAt(index);
+                                index++;
+                                setTimeout(function() { typeText(index) }, 100); // Adjust the timeout to control typing speed
+                            }
+                        }
+            
+                        typeText(0);
+                    });
+                </script>
                 <h2>Hello! My name is Greg Kohler</h2>
                 A student in GIS
             </div>
